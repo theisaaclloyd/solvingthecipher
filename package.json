@@ -1,0 +1,11 @@
+{
+  "name": "solvingthecipher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "solvingthecipher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Isaac Lloyd",
+  "license": "AGPL-3.0-only"
+}
