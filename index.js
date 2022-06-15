@@ -5,7 +5,7 @@ console.log('Creating alphagrams...')
 const grams = anagrams.makeAlphagrams()
 console.log('Finished! Saving to file...')
 try {
-	await fs.writeFile('data.txt', grams)
+	fs.writeFile('data.txt', grams)
 } catch (error) {
 	console.log(error)
 }
