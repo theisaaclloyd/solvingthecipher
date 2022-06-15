@@ -1,15 +1,25 @@
 const anagrams = require("./alphagrams.js")
+const axios = require('axios')
 const fs = require('fs').promises
 
-console.log('Creating alphagrams...')
-const grams = anagrams.makeAlphagrams()
-console.log('Finished! Saving to file...')
-try {
-	fs.writeFile('data.txt', grams)
-} catch (error) {
-	console.log(error)
+async function main() {
+	console.log('Creating alphagrams...')
+	await axios.get("https://6363ad05f2d0a19f5eb394e3c10d5cec.m.pipedream.net/?message=Starting!")
+	const grams = await anagrams.makeAlphagrams()
+	console.log('Finished! Saving to file...')
+	await axios.get("https://6363ad05f2d0a19f5eb394e3c10d5cec.m.pipedream.net/?message=Finished! Saving to file...")
+
+	try {
+		await fs.writeFile('data.txt', grams)
+	} catch (error) {
+		console.log(error)
+		await axios.get("https://6363ad05f2d0a19f5eb394e3c10d5cec.m.pipedream.net/?message=Error!")
+	}
+	console.log('Done')
+	await axios.get("https://6363ad05f2d0a19f5eb394e3c10d5cec.m.pipedream.net/?message=Done!")
 }
-console.log('Done')
+
+main()
 
 /*
 const charnum = {
