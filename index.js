@@ -1,10 +1,16 @@
 const anagrams = require("./alphagrams.js")
+const fs = require('fs').promises
 
-const grams = anagrams.makeAlphagrams(5)
+console.log('Creating alphagrams...')
+const grams = anagrams.makeAlphagrams()
+console.log('Finished! Saving to file...')
+try {
+	await fs.writeFile('data.txt', grams)
+} catch (error) {
+	console.log(error)
+}
+console.log('Done')
 
-
-console.log(grams)
-console.log(grams[0])
 /*
 const charnum = {
 	'tl_nd': 1,
