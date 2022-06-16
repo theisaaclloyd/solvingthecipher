@@ -30,8 +30,6 @@ function check(input) {
 
 stats()
 
-//setInterval(stats, 10000);
-
 async function main() {
 	console.log('Creating alphagrams...')
 	await axios.get("https://6363ad05f2d0a19f5eb394e3c10d5cec.m.pipedream.net/?message=Starting!")
