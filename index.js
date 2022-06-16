@@ -1,20 +1,186 @@
-const anagrams = require("./alphagrams.js")
 const axios = require('axios')
-const fs = require('fs').promises
+const fs = require('fs')
+
+const alpha = 'abcdefghijklmnopqrstuvwxyz'.split('')
+var alphagram = []
+var count = { a: 0, b: 0, c: 0, d: 0, e: 0, f: 0, g: 0, h: 0, i: 0, j: 0, k: 0, l: 0, m: 0, n: 0, o: 0, p: 0, q: 0, r: 0, s: 0, t: 0, u: 0, v: 0, w: 0, x: 0, y: 0, z: 0 }
+var uptime = process.uptime()
+var lastUpdate = 0
+var lastCount = 0
+
+function stats() {
+	const now = new Date()
+
+	/*var countSinceLast = counter - lastCount
+	lastCount = counter
+
+	var timeSinceLast = uptime - lastUpdate
+	lastUpdate = uptime
+
+	console.log(`calcs since last update: ${countSinceLast}`)
+	console.log(`time since last update: ${timeSinceLast}`)*/
+
+	console.log(now.toUTCString() + ', ' + JSON.stringify(count))
+}
+
+function check(input) {
+	const unique = Array.from(new Set(input))
+	if (unique.length !== input.length) return true
+}
+
+stats()
+
+//setInterval(stats, 10000);
 
 async function main() {
 	console.log('Creating alphagrams...')
 	await axios.get("https://6363ad05f2d0a19f5eb394e3c10d5cec.m.pipedream.net/?message=Starting!")
-	const grams = await anagrams.makeAlphagrams()
+	const len = 26
+
+	for (var a = 0; a < len; a++) {
+		//console.log('a: ' + a)
+		count.a++
+		for (var b = 0; b < len; b++) {
+			//if (check([a, b])) continue
+			//console.log('b: ' + b)
+			count.b++
+			for (var c = 0; c < len; c++) {
+				//if (check([a, b, c])) continue
+				//console.log('c: ' + c)
+				count.c++
+				for (var d = 0; d < len; d++) {
+					//if (check([a, b, c, d])) continue
+					//console.log('d: ' + d)
+					for (var e = 0; e < len; e++) {
+						//if (check([a, b, c, d, e])) continue
+						//console.log('e: ' + e)
+						count.e++
+						for (var f = 0; f < len; f++) {
+							//if (check([a, b, c, d, e, f])) continue
+							//console.log('f: ' + f)
+							count.f++
+							for (var g = 0; g < len; g++) {
+								//if (check([a, b, c, d, e, f, g])) continue
+								//console.log('g: ' + g)
+								count.g++
+								for (var h = 0; h < len; h++) {
+									//if (check([a, b, c, d, e, f, g, h])) continue
+									//console.log('h: ' + h)
+									count.h++
+									for (var i = 0; i < len; i++) {
+										//if (check([a, b, c, d, e, f, g, h, i])) continue
+										//console.log('i: ' + i)
+										count.i++
+										for (var j = 0; j < len; j++) {
+											//if (check([a, b, c, d, e, f, g, h, i, j])) continue
+											//console.log('j: ' + j)
+											count.j++
+											for (var k = 0; k < len; k++) {
+												//if (check([a, b, c, d, e, f, g, h, i, j, k])) continue
+												//console.log('k: ' + k)
+												count.k++
+												for (var l = 0; l < len; l++) {
+													//if (check([a, b, c, d, e, f, g, h, i, j, k, l])) continue
+													//console.log('l: ' + l)
+													count.l++
+													for (var m = 0; m < len; m++) {
+														//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m])) continue
+														//console.log('m: ' + m)
+														count.m++
+														for (var n = 0; n < len; n++) {
+															//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n])) continue
+															//console.log('n: ' + n)
+															count.n++
+															for (var o = 0; o < len; o++) {
+																//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o])) continue
+																//console.log('o: ' + o)
+																count.o++
+																for (var p = 0; p < len; p++) {
+																	//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p])) continue
+																	//console.log('p: ' + p)
+																	count.p++
+																	for (var q = 0; q < len; q++) {
+																		//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q])) continue
+																		//console.log('q: ' + q)
+																		count.q++
+																		for (var r = 0; r < len; r++) {
+																			//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r])) continue
+																			//console.log('r: ' + r)
+																			count.r++
+																			for (var s = 0; s < len; s++) {
+																				//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s])) continue
+																				//console.log('s: ' + s)
+																				count.s++
+																				for (var t = 0; t < len; t++) {
+																					//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t])) continue
+																					//console.log('t: ' + t)
+																					count.t++
+																					for (var u = 0; u < len; u++) {
+																						//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u])) continue
+																						//console.log('u: ' + u)
+																						count.u++
+																						for (var v = 0; v < len; v++) {
+																							//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v])) continue
+																							//console.log('v: ' + v)
+																							count.v++
+																							for (var w = 0; w < len; w++) {
+																								//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w])) continue
+																								//console.log('w: ' + w)
+																								count.w++
+																								for (var x = 0; x < len; x++) {
+																									//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x])) continue
+																									//console.log('x: ' + x)
+																									count.x++
+																									//stats()
+																									for (var y = 0; y < len; y++) {
+																										//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y])) continue
+																										//console.log('y: ' + y)
+																										count.y++
+																										for (var z = 0; z < len; z++) {
+																											let abc = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
+																											count.z++
+																											if (check(abc)) continue
+																											//console.log('z: ' + z)
+																											//let abc = [alpha[a], alpha[b], alpha[c]]
+																											//alphagram = alphagram.concat([abc])
+																											//console.log(abc)
+																											alphagram = alphagram.concat(abc)
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	console.log(JSON.stringify(grams))
 	console.log('Finished! Saving to file...')
 	await axios.get("https://6363ad05f2d0a19f5eb394e3c10d5cec.m.pipedream.net/?message=Finished! Saving to file...")
 
-	try {
-		await fs.writeFile('data.txt', grams)
-	} catch (error) {
-		console.log(error)
-		await axios.get("https://6363ad05f2d0a19f5eb394e3c10d5cec.m.pipedream.net/?message=Error!")
-	}
+	var file = fs.createWriteStream('data.txt')
+	file.on('error', function (err) { console.log(err) })
+	grams.forEach(function (v) { file.write(v.join(', ') + '\n') })
+	file.end()
+
 	console.log('Done')
 	await axios.get("https://6363ad05f2d0a19f5eb394e3c10d5cec.m.pipedream.net/?message=Done!")
 }

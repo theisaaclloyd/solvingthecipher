@@ -11,62 +11,91 @@ function check(input) {
 }
 
 exports.makeAlphagrams = () => {
-	for (var a = 0; a < 26; a++) {
-		for (var b = 0; b < 26; b++) {
-			if (check([a, b])) continue
-			for (var c = 0; c < 26; c++) {
-				if (check([a, b, c])) continue
-				for (var d = 0; d < 26; d++) {
-					if (check([a, b, c, d])) continue
-					for (var e = 0; e < 26; e++) {
-						if (check([a, b, c, d, e])) continue
-						for (var f = 0; f < 26; f++) {
-							if (check([a, b, c, d, e, f])) continue
-							for (var g = 0; g < 26; g++) {
-								if (check([a, b, c, d, e, f, g])) continue
-								for (var h = 0; h < 26; h++) {
-									if (check([a, b, c, d, e, f, g, h])) continue
-									for (var i = 0; i < 26; i++) {
-										if (check([a, b, c, d, e, f, g, h, i])) continue
-										for (var j = 0; j < 26; j++) {
-											if (check([a, b, c, d, e, f, g, h, i, j])) continue
-											for (var k = 0; k < 26; k++) {
-												if (check([a, b, c, d, e, f, g, h, i, j, k])) continue
-												for (var l = 0; l < 26; l++) {
-													if (check([a, b, c, d, e, f, g, h, i, j, k, l])) continue
-													for (var m = 0; m < 26; m++) {
-														if (check([a, b, c, d, e, f, g, h, i, j, k, l, m])) continue
-														for (var n = 0; n < 26; n++) {
-															if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n])) continue
-															for (var o = 0; o < 26; o++) {
-																if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o])) continue
-																for (var p = 0; p < 26; p++) {
-																	if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p])) continue
-																	for (var q = 0; q < 26; q++) {
-																		if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q])) continue
-																		for (var r = 0; r < 26; r++) {
-																			if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r])) continue
-																			for (var s = 0; s < 26; s++) {
-																				if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s])) continue
-																				for (var t = 0; t < 26; t++) {
-																					if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t])) continue
-																					for (var u = 0; u < 26; u++) {
-																						if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u])) continue
-																						for (var v = 0; v < 26; v++) {
-																							if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v])) continue
-																							for (var w = 0; w < 26; w++) {
-																								if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w])) continue
-																								for (var x = 0; x < 26; x++) {
-																									if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x])) continue
-																									for (var y = 0; y < 26; y++) {
-																										if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y])) continue
-																										for (var z = 0; z < 26; z++) {
+	var counter = 0
+	const len = 26
+	for (var a = 0; a < len; a++) {
+		//console.log('a: ' + a)
+		for (var b = 0; b < len; b++) {
+			//if (check([a, b])) continue
+			//console.log('b: ' + b)
+			for (var c = 0; c < len; c++) {
+				//if (check([a, b, c])) continue
+				//console.log('c: ' + c)
+				for (var d = 0; d < len; d++) {
+					//if (check([a, b, c, d])) continue
+					//console.log('d: ' + d)
+					for (var e = 0; e < len; e++) {
+						//if (check([a, b, c, d, e])) continue
+						//console.log('e: ' + e)
+						for (var f = 0; f < len; f++) {
+							//if (check([a, b, c, d, e, f])) continue
+							//console.log('f: ' + f)
+							for (var g = 0; g < len; g++) {
+								//if (check([a, b, c, d, e, f, g])) continue
+								//console.log('g: ' + g)
+								for (var h = 0; h < len; h++) {
+									//if (check([a, b, c, d, e, f, g, h])) continue
+									//console.log('h: ' + h)
+									for (var i = 0; i < len; i++) {
+										//if (check([a, b, c, d, e, f, g, h, i])) continue
+										//console.log('i: ' + i)
+										for (var j = 0; j < len; j++) {
+											//if (check([a, b, c, d, e, f, g, h, i, j])) continue
+											//console.log('j: ' + j)
+											for (var k = 0; k < len; k++) {
+												//if (check([a, b, c, d, e, f, g, h, i, j, k])) continue
+												//console.log('k: ' + k)
+												for (var l = 0; l < len; l++) {
+													//if (check([a, b, c, d, e, f, g, h, i, j, k, l])) continue
+													//console.log('l: ' + l)
+													for (var m = 0; m < len; m++) {
+														//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m])) continue
+														//console.log('m: ' + m)
+														for (var n = 0; n < len; n++) {
+															//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n])) continue
+															//console.log('n: ' + n)
+															for (var o = 0; o < len; o++) {
+																//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o])) continue
+																//console.log('o: ' + o)
+																for (var p = 0; p < len; p++) {
+																	//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p])) continue
+																	//console.log('p: ' + p)
+																	for (var q = 0; q < len; q++) {
+																		//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q])) continue
+																		//console.log('q: ' + q)
+																		for (var r = 0; r < len; r++) {
+																			//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r])) continue
+																			//console.log('r: ' + r)
+																			for (var s = 0; s < len; s++) {
+																				//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s])) continue
+																				//console.log('s: ' + s)
+																				for (var t = 0; t < len; t++) {
+																					//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t])) continue
+																					//console.log('t: ' + t)
+																					for (var u = 0; u < len; u++) {
+																						//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u])) continue
+																						//console.log('u: ' + u)
+																						for (var v = 0; v < len; v++) {
+																							//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v])) continue
+																							//console.log('v: ' + v)
+																							for (var w = 0; w < len; w++) {
+																								//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w])) continue
+																								//console.log('w: ' + w)
+																								for (var x = 0; x < len; x++) {
+																									//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x])) continue
+																									//console.log('x: ' + x)
+																									for (var y = 0; y < len; y++) {
+																										//if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y])) continue
+																										//console.log('y: ' + y)
+																										for (var z = 0; z < len; z++) {
 																											let abc = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z]
-																											if (check(abc)) continue
+																											//if (check(abc)) continue
+																											//console.log('z: ' + z)
 																											//let abc = [alpha[a], alpha[b], alpha[c]]
 																											//alphagram = alphagram.concat([abc])
 																											//console.log(abc)
-																											alphagram = alphagram.concat([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z])
+																											counter++
+																											alphagram = alphagram.concat(abc)
 																										}
 																									}
 																								}
@@ -93,6 +122,8 @@ exports.makeAlphagrams = () => {
 			}
 		}
 	}
+
+	console.log('Finished')
 
 	return alphagram
 }
