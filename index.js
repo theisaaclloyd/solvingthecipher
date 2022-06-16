@@ -90,6 +90,7 @@ async function main() {
 																			for (var s = 0; s < len; s++) {
 																				if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s])) continue
 																				count.s++
+																				stats()
 																				for (var t = 0; t < len; t++) {
 																					if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t])) continue
 																					count.t++
@@ -105,7 +106,6 @@ async function main() {
 																								for (var x = 0; x < len; x++) {
 																									if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x])) continue
 																									count.x++
-																									stats()
 																									for (var y = 0; y < len; y++) {
 																										if (check([a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y])) continue
 																										count.y++
